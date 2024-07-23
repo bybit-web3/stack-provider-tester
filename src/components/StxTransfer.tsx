@@ -39,7 +39,7 @@ const ContractCallVote = () => {
         console.log("onCancel:", "Transaction was canceled");
       },
     },
-    window.bybitWallet.stacks,
+    (window as any).bybitWallet.stacks,
   );
   }, [amount, doSTXTransfer, recipient]);
 

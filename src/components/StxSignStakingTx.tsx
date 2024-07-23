@@ -40,7 +40,7 @@ const ContractCallStaking = () => {
 
   useEffect(() => {
     console.log('deserializedTx', deserializedTx)
-      console.log('contractAddress', (deserializedTx.payload.contractAddress))
+      console.log('contractAddress', ((deserializedTx.payload as any).contractAddress))
   }, [deserializedTx])
 
   if (!userSession.isUserSignedIn()) {

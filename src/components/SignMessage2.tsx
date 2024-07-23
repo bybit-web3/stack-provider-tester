@@ -4,7 +4,7 @@ const SignMessage = () => {
 
   const [message, setMessage] = useState('Hello, Bybit.')
 
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState<any>(null);
 
   const handleSignMessage = useCallback(() => {
     (window as any).bybitWallet.stacks.signMessage({

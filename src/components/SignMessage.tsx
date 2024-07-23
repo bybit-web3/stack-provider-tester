@@ -7,7 +7,7 @@ const SignMessage = () => {
 
   const [message, setMessage] = useState('Hello, Bybit.')
 
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState<any>(null);
 
   const handleSignMessage = useCallback(() => {
     showSignMessage({
@@ -22,7 +22,7 @@ const SignMessage = () => {
       message,
       userSession,
     },
-    window.bybitWallet.stacks
+    (window as any).bybitWallet.stacks
     );
   }, []);
 
@@ -37,8 +37,8 @@ const SignMessage = () => {
       <div>
         {result && (
           <div>
-            <div>Signature: {result?.signature}</div>
-            <div>Public Key: {result?.publicKey}</div>
+            <div>Signature: {result.signature}</div>
+            <div>Public Key: {result.publicKey}</div>
           </div>
         )}
       </div>

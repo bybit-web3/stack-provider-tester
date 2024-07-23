@@ -1,5 +1,3 @@
-import { useConnect } from "@stacks/connect-react";
-import { StacksMainnet } from "@stacks/network";
 import {
   AnchorMode,
   PostConditionMode,
@@ -13,14 +11,13 @@ const ContractCallVote = () => {
   const [amount, setAmount] = useState('0.001');
   const [recipient, setRecipient] = useState('SP34J5JX8P30TJDSE77JNJ6D96D1TZXV63ARDJV7X')
 
-  const { doSTXTransfer } = useConnect();
 
   const handleTranfer = useCallback(async () => {
     if (!recipient || !amount) {
       throw new Error('recipient and amount are required')
     }
-    const { address } = await window.bybitWallet.stacks.connect();
-    const data = await window.bybitWallet.stacks.signTransaction({
+    const { address } = await (window as any).bybitWallet.stacks.connect();
+    const data = await (window as any).bybitWallet.stacks.signTransaction({
       stxAddress: address,
       anchorMode: AnchorMode.Any,
       postConditionMode: PostConditionMode.Deny,

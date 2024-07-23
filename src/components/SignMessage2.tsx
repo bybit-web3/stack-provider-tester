@@ -1,6 +1,3 @@
-import { showSignMessage } from "@stacks/connect";
-
-import { userSession } from "../user-session";
 import { useCallback, useState } from "react";
 
 const SignMessage = () => {
@@ -10,10 +7,10 @@ const SignMessage = () => {
   const [result, setResult] = useState(null);
 
   const handleSignMessage = useCallback(() => {
-    window.bybitWallet.stacks.signMessage({
+    (window as any).bybitWallet.stacks.signMessage({
       message,
     })
-      .then(res => {
+      .then((res: any) => {
         console.log('onFinish', res)
         setResult(res)
       })

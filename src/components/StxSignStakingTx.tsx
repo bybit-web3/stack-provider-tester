@@ -1,21 +1,12 @@
 import { openSignTransaction } from '@stacks/connect';
 import {
-  cvToHex,
-  cvToString,
-  cvToValue,
   deserializeTransaction,
 } from '@stacks/transactions';
 
 import { userSession } from "../user-session";
 import {  useEffect } from "react";
-import { Buffer } from 'buffer';
 import { StacksMainnet } from "@stacks/network";
 
-function uint8ArrayToHex(array: Uint8Array): string {
-  return Array.from(array)
-    .map(b => b.toString(16).padStart(2, '0'))
-    .join('');
-}
 
 // function base64ToHex(base64: string): string {
 //   const arrayBuffer = Buffer.from(base64, 'base64');

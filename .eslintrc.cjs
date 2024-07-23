@@ -14,5 +14,7 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    // 允许any类型
+    '@typescript-eslint/no-explicit-any': 'off',
   },
 }

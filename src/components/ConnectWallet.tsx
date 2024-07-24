@@ -14,6 +14,7 @@ function authenticate() {
     },
     userSession,
   },
+  (window as any).bybitWallet.stacks
 );
 }
 

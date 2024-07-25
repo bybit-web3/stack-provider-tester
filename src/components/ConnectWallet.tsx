@@ -30,11 +30,10 @@ const ConnectWallet = () => {
           Disconnect Wallet
         </button>
         <button className="Connect" onClick={authenticate}>
-      Connect Wallet
-    </button>
-        <p>username: {userSession.loadUserData().profile}</p>
-        <p>mainnet: {userSession.loadUserData().profile.stxAddress.mainnet}</p>
-        <p>testnet: {userSession.loadUserData().profile.stxAddress.testnet}</p>
+          Connect Wallet
+        </button>
+        <div>mainnet: {userSession.loadUserData().profile.stxAddress.mainnet}</div>
+        <div>testnet: {userSession.loadUserData().profile.stxAddress.testnet}</div>
       </div>
     );
   }
